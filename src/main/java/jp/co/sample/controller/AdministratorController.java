@@ -104,7 +104,7 @@ public class AdministratorController {
 
 		session.setAttribute("administratorName", admin);
 
-		return "/employee/showList";
+		return "foward:/employee/showList";
 	}
 
 // デバッグ用
