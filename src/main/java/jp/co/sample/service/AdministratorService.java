@@ -19,9 +19,23 @@ public class AdministratorService {
 	@Autowired
 	private AdministratorRepository administratorRepository;
 
+	/**
+	 * 管理者情報を挿入する.
+	 * 
+	 * @param administrator 管理者情報
+	 */
+	public void insert(Administrator administrator) {
+		administratorRepository.insert(administrator);
+	}
+
 	public void testRepository() {
 		Administrator admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtest");
 
 		System.out.println(admin);
+
+		admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtes");
+
+		System.out.println(admin);
+
 	}
 }
