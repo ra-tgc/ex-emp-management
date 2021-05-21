@@ -85,6 +85,14 @@ public class AdministratorController {
 		return "redirect:/";
 	}
 
+	/**
+	 * ログイン処理とsessionスコープへの管理者情報の格納を行う.
+	 * 
+	 * @param form  ログインフォーム
+	 * @param model requestスコープ
+	 * @return ログイン成功時："/employee/showList"(従業員情報一覧ページ)へのフォワード,
+	 *         ログイン失敗時："administrator/login"(ログイン画面)へのフォワード
+	 */
 	@RequestMapping("/login")
 	public String login(LoginForm form, Model model) {
 		Administrator admin = administratorService.login(form.getMailAddress(), form.getPassword());
