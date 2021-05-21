@@ -28,14 +28,26 @@ public class AdministratorService {
 		administratorRepository.insert(administrator);
 	}
 
-	public void testRepository() {
-		Administrator admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtest");
-
-		System.out.println(admin);
-
-		admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtes");
-
-		System.out.println(admin);
-
+	/**
+	 * ログイン処理をする.
+	 * 
+	 * @param mailAddress 照合するメールアドレス
+	 * @param password    照合するパスワード
+	 * @return 管理者情報
+	 */
+	public Administrator login(String mailAddress, String password) {
+		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
 	}
+
+//  デバッグ用
+//	public void testRepository() {
+//		Administrator admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtest");
+//
+//		System.out.println(admin);
+//
+//		admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtes");
+//
+//		System.out.println(admin);
+//
+//	}
 }
