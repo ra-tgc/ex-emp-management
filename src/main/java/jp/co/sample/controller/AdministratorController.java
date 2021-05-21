@@ -39,4 +39,12 @@ public class AdministratorController {
 	public String toInsert() {
 		return "administrator/insert";
 	}
+
+	@RequestMapping("/test-admin")
+	public String testAdmin() {
+
+		administratorService.testRepository();
+
+		return "finished";
+	}
 }

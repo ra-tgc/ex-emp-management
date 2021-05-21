@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jp.co.sample.domain.Administrator;
 import jp.co.sample.repository.AdministratorRepository;
 
 /**
@@ -17,4 +18,10 @@ import jp.co.sample.repository.AdministratorRepository;
 public class AdministratorService {
 	@Autowired
 	private AdministratorRepository administratorRepository;
+
+	public void testRepository() {
+		Administrator admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtest");
+
+		System.out.println(admin);
+	}
 }
