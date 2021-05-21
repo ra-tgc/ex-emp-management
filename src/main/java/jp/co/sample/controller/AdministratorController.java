@@ -53,7 +53,7 @@ public class AdministratorController {
 	/**
 	 * ログイン画面へフォワード.
 	 * 
-	 * @return administrator/login.htmlのビュー
+	 * @return ログイン画面のビュー
 	 */
 	@RequestMapping("/")
 	public String toLogin() {
@@ -63,7 +63,7 @@ public class AdministratorController {
 	/**
 	 * 管理者登録画面へフォワード.
 	 * 
-	 * @return administrator/insert.htmlのビュー
+	 * @return 管理者登録画面のビュー
 	 */
 	@RequestMapping("/toInsert")
 	public String toInsert() {
@@ -74,7 +74,7 @@ public class AdministratorController {
 	 * 管理者情報を登録する.
 	 * 
 	 * @param form 管理者情報のフォーム
-	 * @return "/"(ログイン画面)へのリダイレクト
+	 * @return ログイン画面へのリダイレクト
 	 */
 	@RequestMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
@@ -90,8 +90,7 @@ public class AdministratorController {
 	 * 
 	 * @param form  ログインフォーム
 	 * @param model requestスコープ
-	 * @return ログイン成功時："/employee/showList"(従業員情報一覧ページ)へのフォワード,
-	 *         ログイン失敗時："administrator/login"(ログイン画面)へのフォワード
+	 * @return ログイン成功時：従業員情報一覧ページへのフォワード, ログイン失敗時：ログイン画面へのフォワード
 	 */
 	@RequestMapping("/login")
 	public String login(LoginForm form, Model model) {

@@ -38,7 +38,7 @@ public class EmployeeController {
 	 * 従業員一覧を出力する.
 	 * 
 	 * @param model requestスコープ
-	 * @return employee/list.htmlのビュー
+	 * @return 従業員一覧画面のビュー
 	 */
 	@RequestMapping("/showList")
 	public String showList(Model model) {
@@ -53,7 +53,7 @@ public class EmployeeController {
 	 * 
 	 * @param id    主キー(リクエストパラメータで送られてくる)
 	 * @param model requestスコープ
-	 * @return employee/detail.htmlのビュー
+	 * @return 従業員詳細画面のビュー
 	 */
 	@RequestMapping("/showDetail")
 	public String showDetail(String id, Model model) {
@@ -61,6 +61,22 @@ public class EmployeeController {
 		model.addAttribute("employee", employee);
 
 		return "employee/detail.html";
+	}
+
+	/**
+	 * 従業員の情報を更新する.
+	 * 
+	 * @param form 従業員情報のフォーム
+	 * @return 従業員一覧画面のビュー
+	 */
+	@RequestMapping("/update")
+	public String update(UpdateEmployeeForm form) {
+
+		Employee employee = employeeService.showDetail(Integer.parseInt(form.getId()));
+		employee.setDependentsCount(Integer.parseInt(form.getDependentsCount()));
+
+		employeeService.update(employee);
+		return "redirect:/employee/showList";
 	}
 
 //	デバッグ用
