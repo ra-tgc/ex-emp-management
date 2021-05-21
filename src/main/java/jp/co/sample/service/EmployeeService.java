@@ -9,6 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import jp.co.sample.domain.Employee;
 import jp.co.sample.repository.EmployeeRepository;
 
+/**
+ * 従業員情報を操作するサービス.
+ * 
+ * @author masaki.taguchi
+ *
+ */
 @Service
 @Transactional
 public class EmployeeService {
