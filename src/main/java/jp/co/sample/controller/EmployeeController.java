@@ -12,11 +12,12 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@RequestMapping("/test-emp")
-	public String testEmp() {
-
-		employeeService.testRepository();
-
-		return "finished";
-	}
+//	デバッグ用
+//	@RequestMapping("/test-emp")
+//	public String testEmp() {
+//
+//		employeeService.testRepository();
+//
+//		return "finished";
+//	}
 }
