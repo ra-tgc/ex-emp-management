@@ -15,7 +15,7 @@ import jp.co.sample.form.LoginForm;
 import jp.co.sample.service.AdministratorService;
 
 /**
- * 管理者登録画面を表示する.
+ * 管理者関連機能の制御を行うコントローラ.
  * 
  * @author masaki.taguchi
  *
@@ -102,9 +102,9 @@ public class AdministratorController {
 			return "administrator/login";
 		}
 
-		session.setAttribute("administratorName", admin);
+		session.setAttribute("administratorName", admin.getName());
 
-		return "foward:/employee/showList";
+		return "forward:/employee/showList";
 	}
 
 // デバッグ用

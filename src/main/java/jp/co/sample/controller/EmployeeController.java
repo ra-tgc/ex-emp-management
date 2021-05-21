@@ -11,7 +11,7 @@ import jp.co.sample.domain.Employee;
 import jp.co.sample.service.EmployeeService;
 
 /**
- * 従業員一覧画面を表示する.
+ * 従業員関連機能の制御を行うコントローラ.
  * 
  * @author masaki.taguchi
  *
