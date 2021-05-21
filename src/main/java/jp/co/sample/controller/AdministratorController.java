@@ -106,6 +106,17 @@ public class AdministratorController {
 		return "forward:/employee/showList";
 	}
 
+	/**
+	 * ログアウトする. sessionスコープの情報をクリアしてログアウトを行う。
+	 * 
+	 * @return ログイン画面のビューへのリダイレクト
+	 */
+	@RequestMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		return "redirect:/";
+	}
+
 // デバッグ用
 //	@RequestMapping("/test-admin")
 //	public String testAdmin() {
