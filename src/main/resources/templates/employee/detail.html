@@ -17,6 +17,10 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
+				<div th:insert="employee/fragment :: frag_header">
+					ヘッダー要素
+				</div>
+				<!--
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
 						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -26,10 +30,13 @@
 							class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="list.html" th:href="@{/employee/showList}"> 
+					-->
 						<!-- 企業ロゴ -->
+						<!--
 						<img src="../../static/img/header_logo_small.png" th:src="@{/img/header_logo_small.png}">
 					</a>
 				</div>
+				-->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse"
@@ -174,8 +181,13 @@
 		</div>
 	</div>
 	<!-- end container -->
+	<div th:insert="fragment-all :: frag_footer">
+		フッター要素
+	</div>
+	<!--
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="../../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}" ></script>
+	-->
 </body>
 </html>
