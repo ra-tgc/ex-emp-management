@@ -123,6 +123,31 @@ public class AdministratorController {
 		return "redirect:/";
 	}
 
+	/**
+	 * 管理者情報更新画面へフォワード.
+	 * 
+	 * @return 管理者情報更新画面のビュー
+	 */
+	@RequestMapping("/toUpdate")
+	public String toUpdate() {
+		return "administrator/update";
+	}
+
+	@RequestMapping("/update")
+	public String update(@Validated InsertAdministratorForm form, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return toInsert();
+		}
+
+		Administrator admin = new Administrator();
+		BeanUtils.copyProperties(form, admin);
+		administratorService.update(admin);
+
+		model.addAttribute("updateAdmin", "管理者情報の更新が完了しました");
+
+		return "/";
+	}
+
 // デバッグ用
 //	@RequestMapping("/test-admin")
 //	public String testAdmin() {

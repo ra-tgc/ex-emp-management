@@ -39,6 +39,15 @@ public class AdministratorService {
 		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
 	}
 
+	/**
+	 * 管理者情報を更新する.
+	 * 
+	 * @param administrator 管理者情報
+	 */
+	public void update(Administrator administrator) {
+		administratorRepository.update(administrator);
+	}
+
 //  デバッグ用
 //	public void testRepository() {
 //		Administrator admin = administratorRepository.findByMailAddressAndPassword("iga@sample.com", "testtest");

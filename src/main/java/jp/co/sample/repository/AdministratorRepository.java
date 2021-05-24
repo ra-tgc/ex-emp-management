@@ -58,4 +58,16 @@ public class AdministratorRepository {
 		return administratorList.get(0);
 	}
 
+	/**
+	 * 管理者情報を更新する.
+	 * 
+	 * @param administrator 更新する管理者情報
+	 */
+	public void update(Administrator administrator) {
+		String sql = "UPDATE administrators SET name = :name, mail_address = :mailAddress, password = :password WHERE id = :id;";
+		SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
+
+		template.update(sql, param);
+	}
+
 }
